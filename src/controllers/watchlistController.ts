@@ -1,4 +1,5 @@
 import { Response } from "express";
+import mongoose from "mongoose";
 import WatchlistItem from "../models/watchlistItem";
 import { AuthRequest } from "../middlewares/types";
 
@@ -45,12 +46,27 @@ export const getAllItems = async (req: AuthRequest, res: Response) => {
 export const updateItem = async (req: AuthRequest, res: Response) => {
     const { id } = req.params;
 
-    
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(400).json({ message: "Invalid watchlist item ID" });
+    }
     const { tokenSymbol, tokenName, tokenAddress, notes } = req.body;
     try {
+        const updateFields: Partial<Record<string, any>> = {};
+
+        const allowedFields = [
+            "tokenSymbol",
+            "tokenName",
+            "tokenAddress",
+            "notes",
+        ];
+        allowedFields.forEach((field) => {
+            if (req.body[field] !== undefined) {
+                updateFields[field] = req.body[field];
+            }
+        });
         const item = await WatchlistItem.findOneAndUpdate(
             { _id: id, userId: req.user?.id },
-            { tokenSymbol, tokenName, tokenAddress, notes },
+            updateFields,
             { new: true }
         );
 
