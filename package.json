@@ -1,0 +1,34 @@
+{
+  "name": "build-a-ton_backend_task_for_team_legion",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npx tsc -w --preserveWatchOutput\" \"nodemon dist/bin/www\"",
+    "build": "npx tsc",
+    "start": "node dist/bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "Simple CRUD Rest API with Auth",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.2",
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "mongoose": "^8.15.0",
+    "nodemailer": "^7.0.3",
+    "typescript": "^5.8.3",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/express": "^5.0.2",
+    "@types/node": "^22.15.21",
+    "concurrently": "^9.1.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.10"
+  }
+}
