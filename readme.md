@@ -57,7 +57,7 @@ Remove an item from the watchlist.
 
 ## Authentication Middleware
 
-The `protect` middleware checks for a valid JWT in the request header and attaches user information to the request object.
+The `AuthMiddleware` middleware checks for a valid JWT in the request header and attaches user information to the request object.
 
 ## Technologies Used
 - Node.js + Express
@@ -65,3 +65,9 @@ The `protect` middleware checks for a valid JWT in the request header and attach
 - TypeScript
 - bcryptjs
 - jsonwebtoken
+
+## Env template vars
+- `APP_PORT`
+- `JWT_KEY`
+- `DB_URL`
+- `DB_NAME`

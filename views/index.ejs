@@ -50,9 +50,9 @@
         <div class="section">
             <h2>Overview</h2>
             <p>
-                This is a simple CRUD REST API with basic authentication for token watchlist
-                management functionality using Node.js, Express, MongoDB, and
-                TypeScript.
+                This is a simple CRUD REST API with basic authentication for
+                token watchlist management functionality using Node.js, Express,
+                MongoDB, and TypeScript.
             </p>
         </div>
 
@@ -71,7 +71,9 @@
             <h2>Protected Routes - Watchlist</h2>
             <p>
                 All routes below require the user to be authenticated (bearer
-                token in header - <i>This token is returned in the register or login endpoints</i>).
+                token in header -
+                <i>This token is returned in the register or login endpoints</i
+                >).
             </p>
 
             <h3>Create Item</h3>
@@ -114,9 +116,9 @@
         <div class="section">
             <h2>Authentication Middleware</h2>
             <p>
-                The <code>protect</code> middleware checks for a valid JWT in
-                the request header and attaches user information to the request
-                object.
+                The <code>AuthMiddleware</code> middleware checks for a valid
+                JWT in the request header and attaches user information to the
+                request object.
             </p>
         </div>
 
@@ -128,6 +130,15 @@
                 <li>TypeScript</li>
                 <li>bcryptjs</li>
                 <li>jsonwebtoken</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Env template vars</h2>
+            <ul>
+                <li>APP_PORT</li>
+                <li>JWT_KEY</li>
+                <li>DB_URL</li>
+                <li>DB_NAME</li>
             </ul>
         </div>
     </body>
