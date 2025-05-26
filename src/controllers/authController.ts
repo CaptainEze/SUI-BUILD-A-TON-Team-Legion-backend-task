@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
 import User from "../models/user";
-import { IUser } from "../models/types";
 import { generateToken } from "../utils";
 
 export const register = async (

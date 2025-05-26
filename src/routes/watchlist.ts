@@ -1,8 +1,19 @@
 import { Router } from "express";
 import { AuthMiddleware } from "../middlewares/authMiddleware";
 
-const router = Router();
+import {
+  createItem,
+  getAllItems,
+  updateItem,
+  deleteItem,
+} from '../controllers/watchlistController';
 
-router.use(AuthMiddleware) // test auth middleware
+const router = Router();
+router.use(AuthMiddleware)
+
+router.post('/', createItem);
+router.get('/', getAllItems);
+router.put('/:id', updateItem);
+router.delete('/:id', deleteItem);
 
 export default router;
