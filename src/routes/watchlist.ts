@@ -13,7 +13,7 @@ router.use(AuthMiddleware)
 
 router.post('/', createItem);
 router.get('/', getAllItems);
-router.put('/:id', updateItem);
+router.patch('/:id', updateItem);
 router.delete('/:id', deleteItem);
 
 export default router;
